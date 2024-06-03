@@ -17,6 +17,9 @@
 		30415CA92C0E3DDF009C3F84 /* FilmList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30415CA72C0E3DDF009C3F84 /* FilmList.xcdatamodeld */; };
 		30415CAC2C0E3E8E009C3F84 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30415CAB2C0E3E8E009C3F84 /* CoreDataManager.swift */; };
 		30415CAF2C0E3FF4009C3F84 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30415CAE2C0E3FF4009C3F84 /* ViewModel.swift */; };
+		30415CB22C0E4AA4009C3F84 /* FilmCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30415CB12C0E4AA4009C3F84 /* FilmCellView.swift */; };
+		30415CB42C0E4C74009C3F84 /* ganreIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30415CB32C0E4C74009C3F84 /* ganreIView.swift */; };
+		30415CB62C0E5158009C3F84 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30415CB52C0E5158009C3F84 /* CircleButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		30415CA82C0E3DDF009C3F84 /* FilmList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FilmList.xcdatamodel; sourceTree = "<group>"; };
 		30415CAB2C0E3E8E009C3F84 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		30415CAE2C0E3FF4009C3F84 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		30415CB12C0E4AA4009C3F84 /* FilmCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCellView.swift; sourceTree = "<group>"; };
+		30415CB32C0E4C74009C3F84 /* ganreIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ganreIView.swift; sourceTree = "<group>"; };
+		30415CB52C0E5158009C3F84 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		30415C8F2C0E2FA4009C3F84 /* Movieplanner */ = {
 			isa = PBXGroup;
 			children = (
+				30415CB02C0E4A7F009C3F84 /* Helpers */,
 				30415CAD2C0E3FE3009C3F84 /* ViewModel */,
 				30415CAA2C0E3E5D009C3F84 /* CoreData */,
 				30415CA42C0E3311009C3F84 /* View */,
@@ -101,6 +108,16 @@
 				30415CAE2C0E3FF4009C3F84 /* ViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		30415CB02C0E4A7F009C3F84 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				30415CB12C0E4AA4009C3F84 /* FilmCellView.swift */,
+				30415CB32C0E4C74009C3F84 /* ganreIView.swift */,
+				30415CB52C0E5158009C3F84 /* CircleButtonView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,10 +193,13 @@
 			files = (
 				30415CAC2C0E3E8E009C3F84 /* CoreDataManager.swift in Sources */,
 				30415CA62C0E3347009C3F84 /* FilmListView.swift in Sources */,
+				30415CB22C0E4AA4009C3F84 /* FilmCellView.swift in Sources */,
 				30415C952C0E2FA4009C3F84 /* ViewController.swift in Sources */,
+				30415CB42C0E4C74009C3F84 /* ganreIView.swift in Sources */,
 				30415C912C0E2FA4009C3F84 /* AppDelegate.swift in Sources */,
 				30415CA92C0E3DDF009C3F84 /* FilmList.xcdatamodeld in Sources */,
 				30415C932C0E2FA4009C3F84 /* SceneDelegate.swift in Sources */,
+				30415CB62C0E5158009C3F84 /* CircleButtonView.swift in Sources */,
 				30415CAF2C0E3FF4009C3F84 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

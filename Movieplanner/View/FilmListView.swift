@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FilmListView: View {
     @State private var isOn = false
+    @StateObject var vm = ViewModel()
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
@@ -23,6 +24,17 @@ struct FilmListView: View {
                         .frame(width: 28,height: 28)
                 }
                 Spacer()
+                ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
+                    ScrollView {
+                        ForEach(vm.films) { film in
+                            FilmCellView(film: film)
+                        }
+                    }
+                    HStack {
+                        Spacer()
+                        CircleButtonView()
+                    }
+                }
             }.padding()
         }
     }
