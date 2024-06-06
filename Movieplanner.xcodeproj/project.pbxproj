@@ -20,6 +20,8 @@
 		30415CB22C0E4AA4009C3F84 /* FilmCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30415CB12C0E4AA4009C3F84 /* FilmCellView.swift */; };
 		30415CB42C0E4C74009C3F84 /* ganreIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30415CB32C0E4C74009C3F84 /* ganreIView.swift */; };
 		30415CB62C0E5158009C3F84 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30415CB52C0E5158009C3F84 /* CircleButtonView.swift */; };
+		30A12C6C2C1242C900DCC3A6 /* CustomTougle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A12C6B2C1242C900DCC3A6 /* CustomTougle.swift */; };
+		30A12C6E2C12480700DCC3A6 /* NewFilmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A12C6D2C12480700DCC3A6 /* NewFilmView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		30415CB12C0E4AA4009C3F84 /* FilmCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCellView.swift; sourceTree = "<group>"; };
 		30415CB32C0E4C74009C3F84 /* ganreIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ganreIView.swift; sourceTree = "<group>"; };
 		30415CB52C0E5158009C3F84 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		30A12C6B2C1242C900DCC3A6 /* CustomTougle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTougle.swift; sourceTree = "<group>"; };
+		30A12C6D2C12480700DCC3A6 /* NewFilmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFilmView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				30415CA52C0E3347009C3F84 /* FilmListView.swift */,
+				30A12C6D2C12480700DCC3A6 /* NewFilmView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 				30415CB12C0E4AA4009C3F84 /* FilmCellView.swift */,
 				30415CB32C0E4C74009C3F84 /* ganreIView.swift */,
 				30415CB52C0E5158009C3F84 /* CircleButtonView.swift */,
+				30A12C6B2C1242C900DCC3A6 /* CustomTougle.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 				30415CA62C0E3347009C3F84 /* FilmListView.swift in Sources */,
 				30415CB22C0E4AA4009C3F84 /* FilmCellView.swift in Sources */,
 				30415C952C0E2FA4009C3F84 /* ViewController.swift in Sources */,
+				30A12C6C2C1242C900DCC3A6 /* CustomTougle.swift in Sources */,
+				30A12C6E2C12480700DCC3A6 /* NewFilmView.swift in Sources */,
 				30415CB42C0E4C74009C3F84 /* ganreIView.swift in Sources */,
 				30415C912C0E2FA4009C3F84 /* AppDelegate.swift in Sources */,
 				30415CA92C0E3DDF009C3F84 /* FilmList.xcdatamodeld in Sources */,

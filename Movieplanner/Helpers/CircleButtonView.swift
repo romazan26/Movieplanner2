@@ -15,6 +15,7 @@ struct CircleButtonView: View {
                 .frame(width: 66)
             Text("+")
                 .font(.system(size: 35))
+                .foregroundStyle(.white)
         }
     }
 }
