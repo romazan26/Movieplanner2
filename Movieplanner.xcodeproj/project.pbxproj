@@ -22,6 +22,7 @@
 		30415CB62C0E5158009C3F84 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30415CB52C0E5158009C3F84 /* CircleButtonView.swift */; };
 		30A12C6C2C1242C900DCC3A6 /* CustomTougle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A12C6B2C1242C900DCC3A6 /* CustomTougle.swift */; };
 		30A12C6E2C12480700DCC3A6 /* NewFilmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A12C6D2C12480700DCC3A6 /* NewFilmView.swift */; };
+		30D765832C138DF8002A3AC1 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D765822C138DF8002A3AC1 /* CustomTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		30415CB52C0E5158009C3F84 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		30A12C6B2C1242C900DCC3A6 /* CustomTougle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTougle.swift; sourceTree = "<group>"; };
 		30A12C6D2C12480700DCC3A6 /* NewFilmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFilmView.swift; sourceTree = "<group>"; };
+		30D765822C138DF8002A3AC1 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				30415CB32C0E4C74009C3F84 /* ganreIView.swift */,
 				30415CB52C0E5158009C3F84 /* CircleButtonView.swift */,
 				30A12C6B2C1242C900DCC3A6 /* CustomTougle.swift */,
+				30D765822C138DF8002A3AC1 /* CustomTextFieldView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D765832C138DF8002A3AC1 /* CustomTextFieldView.swift in Sources */,
 				30415CAC2C0E3E8E009C3F84 /* CoreDataManager.swift in Sources */,
 				30415CA62C0E3347009C3F84 /* FilmListView.swift in Sources */,
 				30415CB22C0E4AA4009C3F84 /* FilmCellView.swift in Sources */,

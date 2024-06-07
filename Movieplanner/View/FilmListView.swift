@@ -43,8 +43,8 @@ struct FilmListView: View {
                         //MARK: - Create film button
                         HStack {
                             Spacer()
-                            NavigationLink {
-                                NewFilmView()
+                            NavigationLink {          
+                                NewFilmView(vm: vm)
                             } label: {
                                 CircleButtonView()
                             }
@@ -53,6 +53,10 @@ struct FilmListView: View {
                 }.padding()
             }
         }
+        .onAppear(perform: {
+            print("vm.films: \(vm.films)")
+            print("vm.genre: \(vm.genres)")
+        })
     }
 }
 

@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+
 struct NewFilmView: View {
     
+    @StateObject var vm: ViewModel
     @Environment(\.dismiss) var dismiss
     var body: some View {
         ZStack {
@@ -33,16 +35,63 @@ struct NewFilmView: View {
                     Image(.settings)
                         .resizable()
                         .frame(width: 28,height: 28)
-                }.padding()
+                }
+                
+                //MARK: - Image
+                Color.gray
+                    .cornerRadius(8)
+                    .frame(width: 158, height: 251)
+                
+                //MARK: - Film Title
+                CustomTextFieldView(placeholder: "Film title", text: $vm.simpleTitle)
+                    .padding(.top)
+                    .foregroundStyle(.white)
+                //MARK: - Release year
+                CustomTextFieldView(placeholder: "Release year", text: $vm.simpleRelease)
+                    .foregroundStyle(.white)
+        
+                HStack {
+                    Text("Choose a genre/s")
+                        .font(.system(size: 16, weight: .heavy))
+                        .padding(.top)
+                        .foregroundStyle(.white)
+                    Spacer()
+                }
+                
+                //MARK: - Genre
+                ScrollView(.horizontal) {
+                    HStack{
+                        ganreIView(title: "DRAMA").onTapGesture {vm.addGenre(simpleGenre: "DRAMA")}
+                        ganreIView(title: "DOCUMENTARY").onTapGesture {vm.addGenre(simpleGenre: "DOCUMENTARY")}
+                        ganreIView(title: "ACTION").onTapGesture {vm.addGenre(simpleGenre: "ACTION")}
+                        ganreIView(title: "BIOGRAPHY").onTapGesture {vm.addGenre(simpleGenre: "BIOGRAPHY")}
+                        ganreIView(title: "MUSIC").onTapGesture {vm.addGenre(simpleGenre: "MUSIC")}
+                    }
+                }
                 Spacer()
-                Text("Choose a genre/s")
-                    .font(.system(size: 16, weight: .heavy))
+                
+                //MARK: - Add Button
+                Button(action: {
+                    vm.updataFilm(with: vm.simpleFilm.id)
+                    dismiss()
+                }, label: {
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 50)
+                            .foregroundStyle(.button)
+                        Text("Add film")
+                            .foregroundStyle(.white)
+                    }
+                }).frame(width: 349, height: 69)
             }
+            .onAppear(perform: {
+                vm.addFilm()
+            })
+            .padding()
         }
         .navigationBarBackButtonHidden(true)
     }
 }
 
-#Preview {
-    NewFilmView()
-}
+//#Preview {
+//    NewFilmView(vm: ViewModel())
+//}

@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct ganreIView: View {
-    var title = "COMEDY"
+    var title = ""
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 28)
-                .foregroundStyle(Color(.background))
+                .foregroundStyle(Color(.tougleback))
             Text(title)
-                .font(.system(size: 11, weight: .bold))
+                .font(.system(size: 14, weight: .heavy))
                 .foregroundStyle(.white)
-                .padding(4)
-        }.frame(width: 77, height: 27)
+                .padding(8)
+                
+        }.frame(height: 40)
     }
 }
 

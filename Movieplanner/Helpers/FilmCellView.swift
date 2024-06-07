@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FilmCellView: View {
     
-    var film: Film
+    let film: Film
     
     var body: some View {
         HStack {
@@ -21,10 +21,10 @@ struct FilmCellView: View {
             VStack(alignment: .leading) {
                 
                 //MARK: - Title
-                Text("The Fall Guy")
+                Text("\(film.title ?? "no title")")
                     .foregroundStyle(.white)
                     .font(.system(size: 23, weight: .heavy))
-                Text("2024")
+                Text(film.releaseYear ?? "")
                     .foregroundStyle(.gray)
                     .font(.system(size: 17, weight: .heavy))
                 
