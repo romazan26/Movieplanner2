@@ -1,13 +1,15 @@
 //
-//  SwiftUIView.swift
+//  QueueFilmCellView.swift
 //  Movieplanner
 //
-//  Created by Роман on 03.06.2024.
+//  Created by Роман on 09.06.2024.
 //
 
 import SwiftUI
 
-struct FilmCellView: View {
+struct QueueFilmCellView: View {
+
+    @ObservedObject var vm: ViewModel
     
     let film: Film
     
@@ -24,50 +26,42 @@ struct FilmCellView: View {
                 Text("\(film.title ?? "no title")")
                     .foregroundStyle(.white)
                     .font(.system(size: 23, weight: .heavy))
-                Text(film.releaseYear ?? "")
+                Text("\(film.releaseYear ?? "no year")")
                     .foregroundStyle(.gray)
                     .font(.system(size: 17, weight: .heavy))
                 
                 //MARK: - Ganre
                 if let genres = film.genre?.allObjects as? [Genre] {
-                    VStack{
-                        ForEach(genres) { genre in
-                            ganreIView(title: genre.name ?? "")
+    
+                        ForEach(genres) { genre  in
+                                ganreIView(title: genre.name ?? "")
                         }
-                    }
+                    
                 }
                 
                 Spacer()
-                
-                HStack{
-                    
-                    //MARK: - Open card button
-                    NavigationLink {
-                        //destenation
+
+                    //MARK: - Add to viewed button
+                    Button {
+                        vm.updataFilmStatus(with: film.id)
+                        vm.createViewedFilms()
+                        vm.createQueueFilms()
                     } label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 8)
-                                .frame(width: 120, height: 47)
                                 .foregroundStyle(.button)
-                            Text("Open card")
+                            Text("Add to viewed")
                                 .foregroundStyle(.white)
                                 .font(.system(size: 17, weight: .bold))
-                        }
+                        }.frame(width: 192, height: 47)
                     }
-
-                    //MARK: - Rating
-                    HStack{
-                        Image(systemName: "star.fill")
-                            .foregroundStyle(.yellow)
-                        Text("7.5")
-                    }
-                }
             }
         }
         .frame(width: 330, height: 220)
     }
-}
+    }
+
 
 #Preview {
-    FilmCellView(film: Film())
+    QueueFilmCellView(vm: ViewModel(), film: Film())
 }

@@ -15,19 +15,47 @@ final class ViewModel: ObservableObject {
     
     @Published var films: [Film] = []
     @Published var genres: [Genre] = []
+    @Published var filmsQueue: [Film] = []
+    @Published var filmsViewed: [Film] = []
     
     
     @Published var simpleTitle = ""
     @Published var simpleRelease = ""
     @Published var simpleFilm: Film!
     
+    @Published var genreDrame = false
+    @Published var genreDocumentary = false
+    @Published var genreAction = false
+    @Published var genreBiography = false
+    @Published var genreMusic = false
+    
+    
     init(){
-       
         getFilms()
         getGenre()
        
     }
 
+    //MARK: - Create Viewed List
+    func createViewedFilms(){
+        filmsViewed.removeAll()
+        for film in films {
+            if film.viewed {
+                filmsViewed.append(film)
+            }
+        }
+    }
+    
+    //MARK: - Create Queue List
+    func createQueueFilms(){
+        filmsQueue.removeAll()
+        for film in films {
+            if !film.viewed {
+                filmsQueue.append(film)
+            }
+        }
+    }
+    
     //MARK: - GET
     func getFilms(){
         let request = NSFetchRequest<Film>(entityName: "Film")
@@ -49,6 +77,13 @@ final class ViewModel: ObservableObject {
     }
     
     //MARK: - ADD
+    func addAllgenre(){
+        if genreDrame {addGenre(simpleGenre: "DRAME")}
+        if genreDocumentary {addGenre(simpleGenre: "DOCUMENTARY")}
+        if genreDrame {addGenre(simpleGenre: "ACTION")}
+        if genreDocumentary {addGenre(simpleGenre: "BIOGRAPHY")}
+        if genreDocumentary {addGenre(simpleGenre: "MUSIC")}
+    }
     func addGenre(simpleGenre: String){
     
             let newGenre = Genre(context: manager.context)
@@ -69,15 +104,14 @@ final class ViewModel: ObservableObject {
         save()
         
     }
-    //MARK: - UPDATA
-    func updataFilm(with id: ObjectIdentifier){
+    //MARK: - UPDATA Status view
+    func updataFilmStatus (with id: ObjectIdentifier){
         let request = NSFetchRequest<Film>(entityName: "Film")
         do{
             films = try manager.context.fetch(request)
             
             let film = films.first(where: { $0.id == id })
-            film?.title = simpleTitle
-            film?.releaseYear = simpleRelease
+            film?.viewed = true
         }catch let error {
             print("Dont updata: \(error.localizedDescription)")
         }
@@ -85,8 +119,9 @@ final class ViewModel: ObservableObject {
     }
     //MARK: - SAVE
     func save(){
-        
+        genres.removeAll()
         films.removeAll()
+        
         self.manager.save()
         self.getFilms()
         self.getGenre()

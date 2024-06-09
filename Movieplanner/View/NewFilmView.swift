@@ -61,18 +61,19 @@ struct NewFilmView: View {
                 //MARK: - Genre
                 ScrollView(.horizontal) {
                     HStack{
-                        ganreIView(title: "DRAMA").onTapGesture {vm.addGenre(simpleGenre: "DRAMA")}
-                        ganreIView(title: "DOCUMENTARY").onTapGesture {vm.addGenre(simpleGenre: "DOCUMENTARY")}
-                        ganreIView(title: "ACTION").onTapGesture {vm.addGenre(simpleGenre: "ACTION")}
-                        ganreIView(title: "BIOGRAPHY").onTapGesture {vm.addGenre(simpleGenre: "BIOGRAPHY")}
-                        ganreIView(title: "MUSIC").onTapGesture {vm.addGenre(simpleGenre: "MUSIC")}
+                        ganreIView(title: "DRAMA").onTapGesture {vm.genreDrame = true}
+                        ganreIView(title: "DOCUMENTARY").onTapGesture {vm.genreDocumentary = true}
+                        ganreIView(title: "ACTION").onTapGesture {vm.genreAction = true}
+                        ganreIView(title: "BIOGRAPHY").onTapGesture {vm.genreBiography = true}
+                        ganreIView(title: "MUSIC").onTapGesture {vm.genreMusic = true}
                     }
                 }
                 Spacer()
                 
                 //MARK: - Add Button
                 Button(action: {
-                    vm.updataFilm(with: vm.simpleFilm.id)
+                    vm.addFilm()
+                    vm.addAllgenre()
                     dismiss()
                 }, label: {
                     ZStack{
@@ -83,9 +84,6 @@ struct NewFilmView: View {
                     }
                 }).frame(width: 349, height: 69)
             }
-            .onAppear(perform: {
-                vm.addFilm()
-            })
             .padding()
         }
         .navigationBarBackButtonHidden(true)

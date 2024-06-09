@@ -9,7 +9,8 @@ import SwiftUI
 
 struct FilmListView: View {
     @State private var isOn = false
-    @StateObject var vm = ViewModel()
+    @ObservedObject var vm = ViewModel()
+    
     var body: some View {
         NavigationView{
             ZStack {
@@ -35,9 +36,16 @@ struct FilmListView: View {
                         
                         //MARK: - Film List
                         ScrollView {
-                            ForEach(vm.films) { film in
-                                FilmCellView(film: film)
+                            if isOn {
+                                ForEach(vm.filmsViewed) { film in
+                                    FilmCellView(film: film)
+                                }
+                            }else {
+                                ForEach(vm.filmsQueue) { film in
+                                    QueueFilmCellView(vm: vm, film: film)
+                                }
                             }
+                            
                         }
                         
                         //MARK: - Create film button
@@ -52,11 +60,14 @@ struct FilmListView: View {
                     }
                 }.padding()
             }
+            .animation(.spring, value: isOn)
+            .animation(.spring, value: vm.filmsQueue)
+            .animation(.spring, value: vm.filmsViewed)
+            .onAppear(perform: {
+                vm.createQueueFilms()
+                vm.createViewedFilms()
+            })
         }
-        .onAppear(perform: {
-            print("vm.films: \(vm.films)")
-            print("vm.genre: \(vm.genres)")
-        })
     }
 }
 

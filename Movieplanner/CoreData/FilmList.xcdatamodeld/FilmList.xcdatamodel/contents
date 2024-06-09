@@ -4,7 +4,8 @@
         <attribute name="foto" optional="YES" attributeType="Binary"/>
         <attribute name="releaseYear" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="genre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Genre" inverseName="film" inverseEntity="Genre"/>
+        <attribute name="viewed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="genre" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Genre" inverseName="film" inverseEntity="Genre"/>
     </entity>
     <entity name="Genre" representedClassName="Genre" syncable="YES" codeGenerationType="class">
         <attribute name="choose" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>

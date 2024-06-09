@@ -33,7 +33,7 @@ struct CustonToggleStyle: ToggleStyle {
                     .foregroundStyle(!isOn ? .button : .clear)
                     Text("Queue")
                         .font(.system(size: 15, weight: .bold))
-                        .foregroundStyle(isOn ? .white : .gray)
+                        .foregroundStyle(!isOn ? .white : .gray)
                 }
                 .frame(width: 90, height: 36)
                 .onTapGesture {
