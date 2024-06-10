@@ -24,6 +24,7 @@
 		30A12C6E2C12480700DCC3A6 /* NewFilmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A12C6D2C12480700DCC3A6 /* NewFilmView.swift */; };
 		30D765832C138DF8002A3AC1 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D765822C138DF8002A3AC1 /* CustomTextFieldView.swift */; };
 		30DE1EB42C15F279002F2B18 /* QueueFilmCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DE1EB32C15F279002F2B18 /* QueueFilmCellView.swift */; };
+		30DF9CA32C1784E900D67E02 /* genreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF9CA22C1784E900D67E02 /* genreListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		30A12C6D2C12480700DCC3A6 /* NewFilmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFilmView.swift; sourceTree = "<group>"; };
 		30D765822C138DF8002A3AC1 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		30DE1EB32C15F279002F2B18 /* QueueFilmCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueFilmCellView.swift; sourceTree = "<group>"; };
+		30DF9CA22C1784E900D67E02 /* genreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genreListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				30415CB52C0E5158009C3F84 /* CircleButtonView.swift */,
 				30A12C6B2C1242C900DCC3A6 /* CustomTougle.swift */,
 				30D765822C138DF8002A3AC1 /* CustomTextFieldView.swift */,
+				30DF9CA22C1784E900D67E02 /* genreListView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				30415CB42C0E4C74009C3F84 /* ganreIView.swift in Sources */,
 				30415C912C0E2FA4009C3F84 /* AppDelegate.swift in Sources */,
 				30415CA92C0E3DDF009C3F84 /* FilmList.xcdatamodeld in Sources */,
+				30DF9CA32C1784E900D67E02 /* genreListView.swift in Sources */,
 				30415C932C0E2FA4009C3F84 /* SceneDelegate.swift in Sources */,
 				30415CB62C0E5158009C3F84 /* CircleButtonView.swift in Sources */,
 				30415CAF2C0E3FF4009C3F84 /* ViewModel.swift in Sources */,

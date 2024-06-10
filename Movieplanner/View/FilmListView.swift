@@ -38,7 +38,7 @@ struct FilmListView: View {
                         ScrollView {
                             if isOn {
                                 ForEach(vm.filmsViewed) { film in
-                                    FilmCellView(film: film)
+                                    FilmCellView(film: film, vm: vm)
                                 }
                             }else {
                                 ForEach(vm.filmsQueue) { film in

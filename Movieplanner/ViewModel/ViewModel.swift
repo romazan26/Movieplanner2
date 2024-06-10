@@ -22,6 +22,7 @@ final class ViewModel: ObservableObject {
     @Published var simpleTitle = ""
     @Published var simpleRelease = ""
     @Published var simpleFilm: Film!
+    @Published var genreList: [String] = [String]()
     
     @Published var genreDrame = false
     @Published var genreDocumentary = false
@@ -36,6 +37,16 @@ final class ViewModel: ObservableObject {
        
     }
 
+    //MARK: - Create genreList
+    func createGenreList(genres: [Genre]) -> [String]{
+        var genreList = [String]()
+        genreList.removeAll()
+        for genre in genres {
+            genreList.append(genre.name ?? "") 
+        }
+        return genreList
+    }
+    
     //MARK: - Create Viewed List
     func createViewedFilms(){
         filmsViewed.removeAll()
@@ -74,6 +85,7 @@ final class ViewModel: ObservableObject {
         }catch let error {
             print("not get tasks: \(error)")
         }
+        
     }
     
     //MARK: - ADD
@@ -125,5 +137,6 @@ final class ViewModel: ObservableObject {
         self.manager.save()
         self.getFilms()
         self.getGenre()
+        
     }
 }

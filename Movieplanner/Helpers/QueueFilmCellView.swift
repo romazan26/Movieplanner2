@@ -19,7 +19,7 @@ struct QueueFilmCellView: View {
             //MARK: - Image
             Image(.film)
                 .resizable()
-                .frame(width: 135, height: 214)
+                .frame(width: 135)
             VStack(alignment: .leading) {
                 
                 //MARK: - Title
@@ -32,11 +32,7 @@ struct QueueFilmCellView: View {
                 
                 //MARK: - Ganre
                 if let genres = film.genre?.allObjects as? [Genre] {
-    
-                        ForEach(genres) { genre  in
-                                ganreIView(title: genre.name ?? "")
-                        }
-                    
+                    genreListView(items: vm.createGenreList(genres: genres))
                 }
                 
                 Spacer()
@@ -57,7 +53,8 @@ struct QueueFilmCellView: View {
                     }
             }
         }
-        .frame(width: 330, height: 220)
+        
+        .frame(width: 330, height: 250)
     }
     }
 

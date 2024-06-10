@@ -18,7 +18,7 @@ struct ganreIView: View {
                 .foregroundStyle(.white)
                 .padding(8)
                 
-        }.frame(height: 40)
+        }.frame(height: 27)
     }
 }
 

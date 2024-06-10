@@ -10,7 +10,7 @@ import SwiftUI
 struct FilmCellView: View {
     
     let film: Film
-    
+    @StateObject var vm: ViewModel
     var body: some View {
         HStack {
             
@@ -30,11 +30,7 @@ struct FilmCellView: View {
                 
                 //MARK: - Ganre
                 if let genres = film.genre?.allObjects as? [Genre] {
-                    VStack{
-                        ForEach(genres) { genre in
-                            ganreIView(title: genre.name ?? "")
-                        }
-                    }
+                    genreListView(items: vm.createGenreList(genres: genres))
                 }
                 
                 Spacer()
@@ -69,5 +65,5 @@ struct FilmCellView: View {
 }
 
 #Preview {
-    FilmCellView(film: Film())
+    FilmCellView(film: Film(), vm: ViewModel())
 }
