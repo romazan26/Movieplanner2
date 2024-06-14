@@ -6,12 +6,24 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 
 struct NewFilmView: View {
     
     @StateObject var vm: ViewModel
     @Environment(\.dismiss) var dismiss
+    
+    @State private var isPresented: Bool = false
+
+    var config: PHPickerConfiguration {
+        var config = PHPickerConfiguration(photoLibrary: .shared())
+        config.filter = .images
+        config.selectionLimit = 1
+        
+        return config
+    }
+    
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
@@ -38,10 +50,25 @@ struct NewFilmView: View {
                 }
                 
                 //MARK: - Image
-                Color.gray
-                    .cornerRadius(8)
-                    .frame(width: 158, height: 251)
+                if vm.pickerResult.isEmpty {
+                    Button {
+                        isPresented.toggle()
+                    } label: {
+                        Color.gray
+                            .cornerRadius(8)
+                            .frame(width: 158, height: 251)
+                    }
+                    .sheet(isPresented: $isPresented, content: {
+                        PhotoPicker(configuration: self.config, pickerResult: $vm.pickerResult, isPresented: $isPresented)
+                    })
+                } else {
+                    Image(uiImage: vm.pickerResult.first!)
+                        .resizable()
+                        .cornerRadius(8)
+                        .frame(width: 158, height: 251)
+                }
                 
+       
                 //MARK: - Film Title
                 CustomTextFieldView(placeholder: "Film title", text: $vm.simpleTitle)
                     .padding(.top)
@@ -74,6 +101,7 @@ struct NewFilmView: View {
                 Button(action: {
                     vm.addFilm()
                     vm.addAllgenre()
+                    vm.clear()
                     dismiss()
                 }, label: {
                     ZStack{

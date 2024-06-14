@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct QueueFilmCellView: View {
 
     @ObservedObject var vm: ViewModel
@@ -17,9 +18,11 @@ struct QueueFilmCellView: View {
         HStack {
             
             //MARK: - Image
-            Image(.film)
-                .resizable()
-                .frame(width: 135)
+            if let imgData = film.foto{
+                Image(uiImage: UIImage(data: imgData)!)
+                    .resizable()
+                    .frame(width: 135)
+            }
             VStack(alignment: .leading) {
                 
                 //MARK: - Title

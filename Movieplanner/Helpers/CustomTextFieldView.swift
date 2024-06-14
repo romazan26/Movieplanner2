@@ -11,10 +11,16 @@ struct CustomTextFieldView: View {
     var placeholder = ""
     @Binding var text: String
     var body: some View {
-        ZStack {
+        ZStack(alignment: .leading) {
             Color.tougleback
-            TextField(placeholder, text: $text)
+            if text.isEmpty {
+                Text(placeholder)
+                    .padding()
+                    .foregroundStyle(.white.opacity(0.4))
+            }
+            TextField("", text: $text)
                 .padding()
+                .foregroundStyle(.white)
         }
         .cornerRadius(12)
         .frame(maxWidth: .infinity)
