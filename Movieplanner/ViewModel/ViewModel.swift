@@ -124,7 +124,9 @@ final class ViewModel: ObservableObject {
         let newFilm = Film(context: manager.context)
         newFilm.title = simpleTitle
         newFilm.releaseYear = simpleRelease
-       // newFilm.foto = Data(Sequence)
+        if !pickerResult.isEmpty{
+            newFilm.foto = pickerResult.first
+        }
         simpleFilm = newFilm
         save()
     }

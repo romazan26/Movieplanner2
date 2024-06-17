@@ -20,6 +20,8 @@
 		30415CB22C0E4AA4009C3F84 /* FilmCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30415CB12C0E4AA4009C3F84 /* FilmCellView.swift */; };
 		30415CB42C0E4C74009C3F84 /* ganreIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30415CB32C0E4C74009C3F84 /* ganreIView.swift */; };
 		30415CB62C0E5158009C3F84 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30415CB52C0E5158009C3F84 /* CircleButtonView.swift */; };
+		308462742C20618E009CD601 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308462732C20618E009CD601 /* Film.swift */; };
+		308462762C206360009CD601 /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308462752C206360009CD601 /* UIImageTransformer.swift */; };
 		3090FF822C1CC7E10061B5F8 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3090FF812C1CC7E10061B5F8 /* PhotoPicker.swift */; };
 		30A12C6C2C1242C900DCC3A6 /* CustomTougle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A12C6B2C1242C900DCC3A6 /* CustomTougle.swift */; };
 		30A12C6E2C12480700DCC3A6 /* NewFilmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A12C6D2C12480700DCC3A6 /* NewFilmView.swift */; };
@@ -44,6 +46,8 @@
 		30415CB12C0E4AA4009C3F84 /* FilmCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCellView.swift; sourceTree = "<group>"; };
 		30415CB32C0E4C74009C3F84 /* ganreIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ganreIView.swift; sourceTree = "<group>"; };
 		30415CB52C0E5158009C3F84 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		308462732C20618E009CD601 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		308462752C206360009CD601 /* UIImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
 		3090FF812C1CC7E10061B5F8 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		30A12C6B2C1242C900DCC3A6 /* CustomTougle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTougle.swift; sourceTree = "<group>"; };
 		30A12C6D2C12480700DCC3A6 /* NewFilmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFilmView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 			children = (
 				30415CAB2C0E3E8E009C3F84 /* CoreDataManager.swift */,
 				30415CA72C0E3DDF009C3F84 /* FilmList.xcdatamodeld */,
+				308462732C20618E009CD601 /* Film.swift */,
+				308462752C206360009CD601 /* UIImageTransformer.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -220,9 +226,11 @@
 				30A12C6E2C12480700DCC3A6 /* NewFilmView.swift in Sources */,
 				30415CB42C0E4C74009C3F84 /* ganreIView.swift in Sources */,
 				30415C912C0E2FA4009C3F84 /* AppDelegate.swift in Sources */,
+				308462762C206360009CD601 /* UIImageTransformer.swift in Sources */,
 				30415CA92C0E3DDF009C3F84 /* FilmList.xcdatamodeld in Sources */,
 				30DF9CA32C1784E900D67E02 /* genreListView.swift in Sources */,
 				30415C932C0E2FA4009C3F84 /* SceneDelegate.swift in Sources */,
+				308462742C20618E009CD601 /* Film.swift in Sources */,
 				30415CB62C0E5158009C3F84 /* CircleButtonView.swift in Sources */,
 				30415CAF2C0E3FF4009C3F84 /* ViewModel.swift in Sources */,
 			);

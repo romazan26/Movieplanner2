@@ -19,9 +19,14 @@ struct QueueFilmCellView: View {
             
             //MARK: - Image
             if let imgData = film.foto{
-                Image(uiImage: UIImage(data: imgData)!)
+                Image(uiImage: imgData)
                     .resizable()
                     .frame(width: 135)
+                    .cornerRadius(8)
+            }else {
+                Color.gray
+                    .frame(width: 135)
+                    .cornerRadius(8)
             }
             VStack(alignment: .leading) {
                 

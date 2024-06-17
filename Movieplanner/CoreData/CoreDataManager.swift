@@ -15,6 +15,8 @@ final class CoreDataManager {
     let context: NSManagedObjectContext
     
     init() {
+        
+        ValueTransformer.setValueTransformer(UIImageTransformer(), forName: NSValueTransformerName("UIImageTransformer"))
         container = NSPersistentContainer(name: "FilmList")
         container.loadPersistentStores { descption, error in
             if let error = error{

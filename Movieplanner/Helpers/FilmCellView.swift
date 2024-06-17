@@ -12,12 +12,19 @@ struct FilmCellView: View {
     let film: Film
     @StateObject var vm: ViewModel
     var body: some View {
-        HStack {
+        HStack(spacing: 10) {
             
             //MARK: - Image
-            Image(.film)
-                .resizable()
-                .frame(width: 135, height: 214)
+            if let imgData = film.foto{
+                Image(uiImage: imgData)
+                    .resizable()
+                    .frame(width: 135)
+                    .cornerRadius(8)
+            }else {
+                Color.gray
+                    .frame(width: 135)
+                    .cornerRadius(8)
+            }
             VStack(alignment: .leading) {
                 
                 //MARK: - Title
@@ -60,7 +67,7 @@ struct FilmCellView: View {
                 }
             }
         }
-        .frame(width: 330, height: 220)
+        .frame(width: 330, height: 250)
     }
 }
 
